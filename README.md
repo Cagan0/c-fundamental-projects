@@ -10,7 +10,7 @@ c-fundamental-projects
 └── StudentManagementSystem/  # Dynamic memory & Binary File I/O system
 
 
-==Projects Overview==
+# Projects Overview
 1. GameHub
 A lightweight, terminal-based game collection practicing basic logic flow and console UI design.
 
@@ -25,7 +25,7 @@ Features: Dynamic student tracking with auto-resizing arrays and persistence acr
 
 Core Concepts: Heap allocation (malloc/realloc), Binary File I/O (fwrite/fread), and modular programming (.h / .c multi-file design).
 
-==How to Run==
+# How to Run
 Navigate into the specific project directory and run the compilation commands:
 # To run GameHub
 cd GameHub && gcc main.c -o GameHub && ./GameHub
