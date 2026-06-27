@@ -1,43 +1,37 @@
-GameHub: Pure C Mini-Games Collection
-A lightweight, terminal-based game hub built with C. This project is a collection of classic games designed to practice logic, memory management, and terminal UI design.
+# C Starter Projects
 
-Status: In Development (Beta)
+A collection of C programming projects tracking my journey from core console logic to advanced memory management and modular architecture. 
 
-This project is a personal milestone in my Computer Engineering journey to master the fundamentals of software development.
+---
 
-==Available Games==
-Blackjack (21):
--Full game loop against a dealer AI.
--Features Hit/Stay mechanics.
--Automated dealer logic (hits until 17).
-
-Rock-Paper-Scissors:
--Fast-paced gameplay against AI.
--Includes animation sequences using timing functions.
+## Repository Structure
+c-fundamental-projects
+├── GameHub/                  # Terminal-based mini-games (Blackjack, RPS)
+└── StudentManagementSystem/  # Dynamic memory & Binary File I/O system
 
 
-==Technical Stack & Skills==
-This project implements several core C programming concepts:
+==Projects Overview==
+1. GameHub
+A lightweight, terminal-based game collection practicing basic logic flow and console UI design.
 
--Windows API: Used <windows.h> for Sleep() and system("cls").
--Logic Flow: Managed game states with nested while and do-while loops.
--Randomization: Used srand(time(0)) for unique game seeds.
--Pointers: Basic pointer usage for display updates.
+Features: Blackjack (with automated dealer AI) and Rock-Paper-Scissors (with timing animations).
 
+Core Concepts: <windows.h> utilities, random seeding (srand), loops, and basic pointers.
 
-==Installation & Usage==
-1. Clone the Repository
-Bash
-git clone https://github.com/Cagan0/GameHub.git
+2. Student Management System
+A robust command-line application simulating database persistence using dynamic structures.
 
-2. Compile
-Bash
-gcc main.c -o GameHub
+Features: Dynamic student tracking with auto-resizing arrays and persistence across sessions.
 
-3. Run
-Bash
-./GameHub
+Core Concepts: Heap allocation (malloc/realloc), Binary File I/O (fwrite/fread), and modular programming (.h / .c multi-file design).
 
+==How to Run==
+Navigate into the specific project directory and run the compilation commands:
+# To run GameHub
+cd GameHub && gcc main.c -o GameHub && ./GameHub
 
-==About Me==
-1st-year Computer Engineering student at Yaşar University. This is my first project where I devolop myself and practice C fundamentals like pointers and Windows API.
+# To run Student Management System
+cd StudentManagementSystem && gcc main.c student.c -o StudentSystem && ./StudentSystem
+
+## About Me
+Computer Engineering student at Yaşar University. This repository represents my journey into mastering programming fundamentals, data structures, and memory management. I am focused on building a strong core in computer science while continuously expanding my skillset toward modern software development practices.
