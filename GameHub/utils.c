@@ -5,6 +5,7 @@
 bool gameover = false;
 bool gameexitrps = false;
 bool gameexitbj = false;
+char *rps_status = "";
 
 void clear_screen() {
     system("cls");
@@ -97,6 +98,24 @@ void determine_move(char user_move, char **user_display){
     }
 }
 
-void rps_winner() {
-    // This function will be implemented to determine the winner of the Rock-Paper-Scissors game
+void rps_winner(char user_move, int ai_move) {
+    if(user_move == 'r' && ai_move == AI_ROCK){
+        rps_status = "DRAW!!\n";
+    } else if(user_move == 'r' && ai_move == AI_PAPER){
+        rps_status = "YOU LOSE!!\n";
+    } else if(user_move == 'r' && ai_move == AI_SCISSORS){
+        rps_status = "YOU WIN!!\n";
+    } else if(user_move == 'p' && ai_move == AI_ROCK){
+        rps_status = "YOU WIN!!\n";
+    } else if(user_move == 'p' && ai_move == AI_PAPER){
+        rps_status = "DRAW!!\n";
+    } else if(user_move == 'p' && ai_move == AI_SCISSORS){
+        rps_status = "YOU LOSE!!\n";
+    } else if(user_move == 's' && ai_move == AI_ROCK){
+        rps_status = "YOU LOSE!!\n";
+    } else if(user_move == 's' && ai_move == AI_PAPER){
+        rps_status = "YOU WIN!!\n";
+    } else if(user_move == 's' && ai_move == AI_SCISSORS){
+        rps_status = "DRAW!!\n";
+    }
 }

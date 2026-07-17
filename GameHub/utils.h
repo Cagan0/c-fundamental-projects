@@ -5,10 +5,14 @@
 
 #define DEALER_LIMIT 17
 #define MAX_LIMIT 21
+#define AI_ROCK 0
+#define AI_PAPER 1
+#define AI_SCISSORS 2
 
 extern bool gameover;
 extern bool gameexitrps;
 extern bool gameexitbj;
+extern char *rps_status;
 
 
 
@@ -23,6 +27,6 @@ void CheckWinner(int usertotal, int dealertotal);
 
 //Rock-Paper-Scissors specific utility functions
 void determine_move(char user_move, char **user_display);
-void rps_winner();
+void rps_winner(char user_move, int ai_move);
 
 #endif

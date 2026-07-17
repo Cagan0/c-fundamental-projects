@@ -12,19 +12,33 @@ int main() {
     srand(time(0));
     int gamechoose;
 
-    printf("==========GAME HUB==========\n\n");
+    printf("==========GAME HUB==========EXIT(0)\n\n");
     printf("--Avaliable Games--\n");
     printf("1) Rock-Paper-Scissors\n");
     printf("2) Blackjack\n");
+    
 
-    do{printf("Choose a Game:");
+    do{
+        printf("Choose a Game:");
        scanf("%d", &gamechoose);
-} while(gamechoose < 1 || gamechoose > 2);
+
+       if(gamechoose == 0){
+        printf("Exiting GameHub...");
+        wait(2000);
+        clear_screen();
+        return 0;
+       }
+    
+       if(gamechoose < 1 || gamechoose > 2){
+        printf("Wrong input! Use 1 or 2\n");
+        wait(1000);
+} }while(gamechoose < 1 || gamechoose > 2);
 clear_screen();
     
 //-------------Rock-Paper-Scissors--------------------------
 
     if(gamechoose == 1) {
+        gameexitrps = false;
 
         while(gameexitrps == false){
         char user_move;
@@ -32,12 +46,23 @@ clear_screen();
         int ai_move = rand() % 3;
         char *ai_display[] = {"Rock", "Paper", "Scissors"};
         char *ai_displayBEFORE[] = {"Rock...", "Paper...", "Scissors...", "SHOOT!!!"};
+        
 
 
         printf("==========ROCK-PAPER-SCISSORS==========EXIT(e)\n\n");
         printf("Rock(r) - Paper(p) - Scissors(s)\n");
+        do{
         printf("Choose your Move:");
         scanf(" %c", &user_move);
+        if(user_move == 'e'|| user_move == 'E'){
+            break;
+        }
+        if (user_move != 'r' && user_move != 'p' && user_move != 's') {
+        printf("Wrong input! Use r, p, s or e\n");
+        wait(100);
+    }
+    } while(user_move != 'r' && user_move != 'p' && user_move != 's');
+        
         if(user_move == 'e'|| user_move == 'E') {
             printf("Exiting Game...");
             wait(2000);
@@ -52,7 +77,7 @@ clear_screen();
         printf("YOU: %s\n", user_display);
 
         for(int i = 0; i <= 3; i++){
-        printf("\rAI Player: %s ",ai_displayBEFORE[i]); // Refresh same lime for animation effect
+        printf("\rAI Player: %s ",ai_displayBEFORE[i]); // Refresh same line for animation effect
         fflush(stdout); // Clear output buffer so line can update immediately
         wait(1000);
         printf("\r                                \r"); // Clear the line after animation
@@ -60,6 +85,15 @@ clear_screen();
         
         printf("\rAI Player: %s\n\n",ai_display[ai_move]);
         wait(1000);
+
+        rps_winner(user_move, ai_move);
+        printf("%s", rps_status);
+        wait(2000);
+        printf("\n----PREPARING NEXT GAME----\n");
+        wait(2000);
+        clear_screen();
+
+
         
     } 
 }
@@ -85,7 +119,7 @@ clear_screen();
     }
     while(choice < 0 || choice > 2 );
 
-
+    
 
     while(gameover == false) {
 
@@ -136,7 +170,6 @@ clear_screen();
 }
 
 //----------------------------------------------------------
-
 
 }
 
